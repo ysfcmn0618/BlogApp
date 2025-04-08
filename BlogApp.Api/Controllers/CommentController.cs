@@ -60,7 +60,7 @@ namespace BlogApp.Api.Controllers
         }
 
         // Read - ID'ye göre yorum getirme
-        [HttpGet("{id}")]
+        [HttpGet("{id:int}")]
         public async Task<ActionResult<CommentDto>> GetCommentById(int id)
         {
             var comment = await _context.Comments
@@ -86,7 +86,7 @@ namespace BlogApp.Api.Controllers
         }
 
         // Update - Yorum güncelleme
-        [HttpPut("{id}")]
+        [HttpPut("{id:int}")]
         [Authorize]
         public async Task<IActionResult> UpdateComment(int id, [FromBody] CommentCreateDto commentDto)
         {
@@ -112,7 +112,7 @@ namespace BlogApp.Api.Controllers
         }
 
         // Delete - Yorum silme
-        [HttpDelete("{id}")]
+        [HttpDelete("{id:int}")]
         [Authorize]
         public async Task<IActionResult> DeleteComment(int id)
         {

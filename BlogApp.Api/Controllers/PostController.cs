@@ -55,7 +55,7 @@ namespace BlogApp.Api.Controllers
             return Ok(postDtos);
         }
 
-        [HttpGet("{int:id}")]
+        [HttpGet("{id}:int")]
         public async Task<ActionResult<PostListDto>> GetPostById(int id)
         {
 
@@ -77,7 +77,7 @@ namespace BlogApp.Api.Controllers
             return Ok(postDto);
         }
 
-        [HttpPut("{int:id}")]
+        [HttpPut("{id:int}")]
         [Authorize]
         public async Task<IActionResult> UpdatePost(int id, [FromBody] PostUpdateDto post)
         {
@@ -104,7 +104,7 @@ namespace BlogApp.Api.Controllers
             return NoContent();
         }
 
-        [HttpDelete("{int:id}")]
+        [HttpDelete("{id:int}")]
         [Authorize]
         public async Task<IActionResult> DeletePost(int id)
         {

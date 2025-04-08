@@ -41,7 +41,7 @@ namespace BlogApp.Api.Controllers
         }
 
         // Read - ID'ye göre kategori getirme
-        [HttpGet("{int:id}")]
+        [HttpGet("{id:int}")]
         public async Task<ActionResult<CategoryDto>> GetCategoryById(int id)
         {
             var category = await _context.Categories.FirstOrDefaultAsync(c => c.Id == id);
@@ -61,7 +61,7 @@ namespace BlogApp.Api.Controllers
         }
 
         // Update - Kategoriyi güncelleme
-        [HttpPut("{int:id}")]
+        [HttpPut("{id:int}")]
         [Authorize]
         public async Task<IActionResult> UpdateCategory(int id, [FromBody] CategoryDto categoryDto)
         {
@@ -81,7 +81,7 @@ namespace BlogApp.Api.Controllers
         }
 
         // Delete - Kategoriyi silme
-        [HttpDelete("{int:id}")]
+        [HttpDelete("{id:int}")]
         [Authorize]
         public async Task<IActionResult> DeleteCategory(int id)
         {
