@@ -1,6 +1,6 @@
 ﻿namespace BlogApp.Api.DTOs
 {
-    public class CategoryListDto
+    public class CategoryDto
     {
         public int Id { get; set; }
         public string Name { get; set; }
