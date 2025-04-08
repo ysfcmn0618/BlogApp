@@ -61,6 +61,7 @@ namespace BlogApp.Api.Controllers
 
         // Read - ID'ye göre yorum getirme
         [HttpGet("{id:int}")]
+        [Authorize]
         public async Task<ActionResult<CommentDto>> GetCommentById(int id)
         {
             var comment = await _context.Comments

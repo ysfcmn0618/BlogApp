@@ -36,6 +36,7 @@ namespace BlogApp.Api.Controllers
         }
 
         [HttpGet]
+        [Authorize]
         public async Task<ActionResult<IEnumerable<PostListDto>>> GetAllPosts()
         {
             var posts = await _context.Posts
@@ -56,6 +57,7 @@ namespace BlogApp.Api.Controllers
         }
 
         [HttpGet("{id}:int")]
+        [Authorize]
         public async Task<ActionResult<PostListDto>> GetPostById(int id)
         {
 
